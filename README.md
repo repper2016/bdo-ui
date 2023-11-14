@@ -1,13 +1,13 @@
-# comkit-ui
+# bdo-element-ui
 
-comkit-ui 是一个基于 element-ui 进行二次封装的组件库，主要为自己业务封装的一些组件和对 element-ui 进行新的主题定制。
+bdo-element-ui 是一个基于 element-ui 进行二次封装的组件库，主要为自己业务封装的一些组件和对 element-ui 进行新的主题定制。
 
 每个人都可以以框架来定制自己的组件库。
 
 ## 安装
 
 ```
-npm install @comkit/comkit-ui -S
+npm install @rpui/bdo-element-ui -S
 ```
 
 ## 使用
@@ -16,10 +16,10 @@ npm install @comkit/comkit-ui -S
 
 ```
 import Vue from 'vue'
-import ComkitUI from '@comkit/comkit-ui'
-import '@comkit/comkit-ui/lib/ComkitUI.css'
+import BdoUI from '@rpui/bdo-element-ui'
+import '@rpui/bdo-element-ui/lib/BdoUI.css'
 
-Vue.use(ComkitUI)
+Vue.use(BdoUI)
 ```
 
 ## 特点
