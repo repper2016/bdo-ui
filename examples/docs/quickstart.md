@@ -2,9 +2,9 @@
 
 本节将介绍如何在项目中使用组件库。
 
-### 引入 @comkit/comkit-ui
+### 引入 @rpui/bdo-element-ui
 
-你可以引入整个 @comkit/comkit-ui，或是根据需要仅引入部分组件。我们先介绍如何引入完整的 @comkit/comkit-ui。
+你可以引入整个 @rpui/bdo-element-ui，或是根据需要仅引入部分组件。我们先介绍如何引入完整的 @rpui/bdo-element-ui。
 
 #### 完整引入
 
@@ -12,11 +12,11 @@
 
 ```javascript
 import Vue from 'vue';
-import ComkitUI from '@comkit/comkit-ui';
-import '@comkit/comkit-ui/lib/ComkitUI.css';
+import BdoUi from '@rpui/bdo-element-ui';
+import '@rpui/bdo-element-ui/lib/BdoUI.css';
 import App from './App.vue';
 
-Vue.use(ComkitUI);
+Vue.use(BdoUi);
 
 new Vue({
   el: '#app',

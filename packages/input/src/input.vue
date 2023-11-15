@@ -1,5 +1,7 @@
 <template>
-  <el-input :value="value" :size="size" :resize="resize" :form="form" :disabled="disabled" :readonly="readonly" :type="type" :autosize="autosize" :autocomplete="autocomplete" :validateEvent="validateEvent" :suffixIcon="suffixIcon" :prefixIcon="prefixIcon" :label="label" :clearable="clearable" :tabindex="tabindex"></el-input>
+  <div>
+    <el-input v-model="data_value" @input="inputChange($event)" :size="size" :resize="resize" :form="form" :disabled="disabled" :readonly="readonly" :type="type" :autosize="autosize" :autocomplete="autocomplete" :validateEvent="validateEvent" :suffixIcon="suffixIcon" :prefixIcon="prefixIcon" :label="label" :clearable="clearable" :tabindex="tabindex"></el-input>
+  </div>
 </template>
 
 <script>
@@ -12,7 +14,6 @@
 
   export default {
     name: 'EuiInput',
-
     props: {
       value: [String, Number],
       size: String,
@@ -53,6 +54,24 @@
         default: false
       },
       tabindex: String
+    },
+    data() {
+      return {
+        data_value:''
+      }
+    },
+    watch: {
+      // `visible(value) => this.isVisible = value` could work too
+      value() {
+        this.data_value = this.$props.value
+      }
+    },
+    methods:{
+      inputChange(val) {
+        this.$emit("input", val);
+      },
+    },
+    mounted(){
     }
   }
 </script>

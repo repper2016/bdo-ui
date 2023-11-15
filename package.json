@@ -1,7 +1,7 @@
 {
   "name": "@rpui/bdo-element-ui",
   "description": "bdo-element-ui基于element二次封装的组件",
-  "version": "1.2.1",
+  "version": "1.2.7",
   "author": "Rp",
   "private": false,
   "main": "lib/BdoUI.common.js",

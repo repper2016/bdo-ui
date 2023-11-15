@@ -1,5 +1,5 @@
 <template>
-  <el-select :name="name" :id="id" :value="value" :autocomplete="autocomplete" :automaticDropdown="automaticDropdown" :size="size" :disabled="disabled" :clearable="clearable" :filterable="filterable" :allowCreate="allowCreate" :loading="loading" :popperClass="popperClass" :remote="remote" :loadingText="loadingText" :noMatchText="noMatchText" :noDataText="noDataText" :remoteMethod="remoteMethod" :filterMethod="filterMethod" :multiple="multiple" :multipleLimit="multipleLimit" :placeholder="placeholder" :defaultFirstOption="defaultFirstOption" :reserveKeyword="reserveKeyword" :valueKey="valueKey" :collapseTags="collapseTags" :popperAppendToBody="popperAppendToBody">
+  <el-select :name="name" :id="id" :value="data_value" :autocomplete="autocomplete" :automaticDropdown="automaticDropdown" :size="size" :disabled="disabled" :clearable="clearable" :filterable="filterable" :allowCreate="allowCreate" :loading="loading" :popperClass="popperClass" :remote="remote" :loadingText="loadingText" :noMatchText="noMatchText" :noDataText="noDataText" :remoteMethod="remoteMethod" :filterMethod="filterMethod" :multiple="multiple" :multipleLimit="multipleLimit" :placeholder="placeholder" :defaultFirstOption="defaultFirstOption" :reserveKeyword="reserveKeyword" :valueKey="valueKey" :collapseTags="collapseTags" :popperAppendToBody="popperAppendToBody">
     <slot></slot>
   </el-select>
 </template>
@@ -19,7 +19,6 @@
       name: String,
       id: String,
       value: {
-        required: true
       },
       autocomplete: {
         type: String,
@@ -70,6 +69,17 @@
         type: Boolean,
         default: true
       }
-    }
+    },
+    data() {
+      return {
+        data_value:null
+      }
+    },
+    watch: {
+      // `visible(value) => this.isVisible = value` could work too
+      value() {
+        this.data_value = this.$props.value
+      }
+    },
   }
 </script>
